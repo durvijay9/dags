@@ -1,0 +1,160 @@
+body
+{
+	
+}
+
+.navbar-color
+{
+	/*background-color: #34A853;*/
+	background-color: #cc0001;
+}
+
+.button-color
+{
+	border-color: white;
+	background-color: green;
+}
+.textbox-border
+{
+	/*background: transparent;*/
+    /*border-top: transparent !important;
+    border-left: transparent !important;
+    border-right: transparent !important;*/
+    /*border-bottom: 1px solid !important;*/
+    color: white;
+    padding-left: 0;
+    box-shadow: none;
+}
+.card-color
+{
+	background-color: white;
+}
+
+.text-color
+{
+	color: white;
+}
+.spacing-top
+{
+	margin-top: 15px;
+}
+.extra-padding
+{
+	padding: 20px;
+}
+
+.box-type
+{
+	border: solid;
+}
+.no-margin
+{
+	margin-right: 0px;
+	margin-left: 0px;
+}
+.ontop
+{
+	z-index: -999;
+}
+.btn-color
+{
+	background-color: #cc0001;
+}
+.overlap
+{
+	z-index: 100;
+}
+.textbox-depth
+{
+	z-index: -100;
+}
+.card-layout
+{
+	margin-top: 100px;
+	border: 1px solid #cc0001;
+	padding: 20px;
+}
+li
+{  
+    cursor:pointer;
+    padding: 0px;
+}  
+li:hover  
+{  
+    background-color:#f9f9f9;  
+} 
+
+
+/*.custom-form {
+  
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background: #fff;
+  .btn-danger {
+    background-color: #8e44ad;
+    border-color: #8e44ad;
+  }
+  .form-group1 {
+    position: relative;
+    padding-top: 15px;
+    margin-bottom: 16px;
+    .animated-label {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+      width: 100%;
+      font-weight: 300;
+      opacity: 0.5;
+      cursor: text;
+      transition: 0.2s ease all;
+      margin: 0;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 45%;
+        height: 2px;
+        width: 10px;
+        visibility: hidden;
+        background-color:#8e44ad;
+        transition: 0.2s ease all;
+      }
+    }
+    &.not-empty {
+      .animated-label {
+        top: 0;
+        font-size: 12px;
+      }
+    }
+    .form-control1 {
+      position: relative;
+      z-index: 1;
+      border-radius: 0;
+      border-width: 0 0 1px;
+      border-bottom-color: rgba(0,0,0,0.25);
+      height: auto;
+      padding: 3px 0 5px;
+      &:focus {
+        box-shadow: none;
+        border-bottom-color: rgba(0,0,0,0.12);
+        ~ .animated-label {
+          top: 0;
+          opacity: 1;
+          color: #8e44ad;
+          font-size: 12px;
+          &:after {
+            visibility: visible;
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}*/
