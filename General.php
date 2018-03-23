@@ -268,9 +268,18 @@ class dags
 
 	    }
 
-	    function loginuser($userid, $password)
+	    function loginuser($conn, $userid, $password)
 	    {
-	    	return "valid";
+	    	$qry = "SELECT email, password FROM users WHERE email ='$userid' and password='$password'";
+	        $res = mysqli_query($conn, $qry);
+	        if (mysqli_num_rows($res) == 1) 
+	        {
+	            return true;
+	        } 
+	        else 
+	        {
+	            return false;
+	        }
 	    }
 
 

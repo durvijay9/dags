@@ -1,0 +1,17 @@
+1. sign with google -> data goes in user table -> redirect to home with map and form field to insert address
+
+2. redirect to home with map and form field to insert address -> insert in location table 
+
+3. add UIDAI -> update user table
+
+4. + Add new location
+
+5. get all laction of user getMyPlaced()
+
+webapplication =>
+
+login with predefined credentials. 
+
+if -> onkeyup found
+
+insert into location table.

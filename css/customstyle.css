@@ -1,6 +1,17 @@
-body
-{
-	
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px; /* Margin bottom by footer height */
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
 }
 
 .navbar-color
@@ -16,12 +27,7 @@ body
 }
 .textbox-border
 {
-	/*background: transparent;*/
-    /*border-top: transparent !important;
-    border-left: transparent !important;
-    border-right: transparent !important;*/
-    /*border-bottom: 1px solid !important;*/
-    color: white;
+    border-color: #cc0001;
     padding-left: 0;
     box-shadow: none;
 }
@@ -42,13 +48,17 @@ body
 {
 	padding: 20px;
 }
-
+.form-border
+{
+  border: 1px #cc0001 solid;
+}
 .box-type
 {
 	border: solid;
 }
-.no-margin
+.row-allign
 {
+  margin-top: 80px;
 	margin-right: 0px;
 	margin-left: 0px;
 }
@@ -70,7 +80,8 @@ body
 }
 .card-layout
 {
-	margin-top: 100px;
+  /*box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  margin-top: 30px;
 	border: 1px solid #cc0001;
 	padding: 20px;
 }
@@ -85,76 +96,3 @@ li:hover
 } 
 
 
-/*.custom-form {
-  
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  background: #fff;
-  .btn-danger {
-    background-color: #8e44ad;
-    border-color: #8e44ad;
-  }
-  .form-group1 {
-    position: relative;
-    padding-top: 15px;
-    margin-bottom: 16px;
-    .animated-label {
-      position: absolute;
-      top: 20px;
-      left: 0;
-      bottom: 0;
-      z-index: 2;
-      width: 100%;
-      font-weight: 300;
-      opacity: 0.5;
-      cursor: text;
-      transition: 0.2s ease all;
-      margin: 0;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 45%;
-        height: 2px;
-        width: 10px;
-        visibility: hidden;
-        background-color:#8e44ad;
-        transition: 0.2s ease all;
-      }
-    }
-    &.not-empty {
-      .animated-label {
-        top: 0;
-        font-size: 12px;
-      }
-    }
-    .form-control1 {
-      position: relative;
-      z-index: 1;
-      border-radius: 0;
-      border-width: 0 0 1px;
-      border-bottom-color: rgba(0,0,0,0.25);
-      height: auto;
-      padding: 3px 0 5px;
-      &:focus {
-        box-shadow: none;
-        border-bottom-color: rgba(0,0,0,0.12);
-        ~ .animated-label {
-          top: 0;
-          opacity: 1;
-          color: #8e44ad;
-          font-size: 12px;
-          &:after {
-            visibility: visible;
-            width: 100%;
-            left: 0;
-          }
-        }
-      }
-    }
-  }
-}*/

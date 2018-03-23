@@ -7,40 +7,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/customstyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" />
+        
     <title>POST</title>
   </head>
 
   <body ng-app="indexApp" ng-controller="control1">
     <div class="fluid-container">
-      <nav class="navbar navbar-expand-lg navbar-primary navbar-color">
-        <a class="navbar-brand text-color" href="#">Navbar</a>
-        <button class="navbar-toggler button-color" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <!-- <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul> -->
-        </div>
-      </nav>
-      <div class="fluid-container">
+      <?php 
+        include('navbar.php');
+      ?>
+      <div class="">
         <div class="row no-margin">
-          <div class="col-sm-3">
-           
-          </div>
           <div class="col-sm-6">
-            <div class="border border-warning spacing-top">
+            <div class="form-border spacing-top">
               <div class="card-header"><center><h5>Header</h5></center></div>
               <div class="extra-padding">
                 <form ng-submit="processForm()" class="custom-form">
@@ -53,14 +33,14 @@
                     </div> -->
                     <div class="form-group col-md-2">
                       <label for="inputZip" class="animated-label">Zip</label>
-                      <input type="text" class="form-control rounded-0 is-valid textbox-depth" id="zip" ng-model="zip" ng-keyup="getZipCode(zip)"/>
-                      <ul class="list-group" ng-model="hidethis" ng-hide="hidethis" class="overlap">  
-                          <li class="list-group-item" ng-repeat="zipcode in filterzipcodes" ng-click="fillTextbox(zipcode)">{{zipcode}}</li>  
-                     </ul>
+                      <input type="text" class="form-control rounded-0 textbox-depth textbox-border" id="pincode" ng-model="pincode" ng-keyup="getPincode()"/>
+                      <!-- <ul class="list-group" ng-model="hidethis" ng-hide="hidethis" class="overlap">  
+                          <li class="list-group-item" ng-repeat="zipcode in filterzipcodes" ng-click="complete(zipcode)">{{zipcode}}</li>  
+                     </ul> -->
                     </div>
                     <div class="form-group col-md-4">
                       <label for="input8">State</label>
-                      <select id="inputState" class="form-control rounded-0 is-valid" ng-model="input8" ng-keyup="getStates()">
+                      <select id="inputState" class="form-control rounded-0 textbox-border" ng-model="state" ng-keyup="getStates()">
                         <option selected>Choose...</option>
                         <option selected>Choose...</option>
                         <option selected>Choose...</option>
@@ -70,40 +50,40 @@
                     </div>
                     <div class="form-group col-md-6">
                       <label for="input6">District</label>
-                      <input type="text" class="form-control rounded-0 is-valid" id="input7" placeholder="District" ng-model="district.zipcode" ng-keyup="getDistrict()"/>
+                      <input type="text" class="form-control rounded-0 textbox-border" id="district" placeholder="District" ng-model="district" ng-keyup="getDistrict()"/>
                     </div>
                   </div>
 
                   <div class="form-row textbox-depth">
                     <div class="form-group col-md-6">
                       <label for="input7">City</label>
-                      <input type="text" class="form-control rounded-0 is-valid" id="input6" ng-model="input6" ng-keyup="getCity()"/>
+                      <input type="text" class="form-control rounded-0 textbox-border" id="city" ng-model="city" ng-keyup="getCity()"/>
                     </div>
                     <div class="form-group col-md-6">
-                      <label for="input5">Something</label>
-                      <input type="text" class="form-control rounded-0 is-valid textbox-depth" id="input5" placeholder="" ng-model="input5" ng-keyup=""/>
-                    </div>
-                  </div>
-
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="input4">Sector/Area</label>
-                      <input type="text" class="form-control rounded-0 is-valid" id="input4" placeholder="Sector/Area" ng-model="input4" ng-keyup="getArea()"/>
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="input3">Street Name/Street No.</label>
-                      <input type="text" class="form-control rounded-0 is-valid" id="input3" placeholder="Street Name/Street No." ng-model="input3" ng-keyup="getStreet()"/>
+                      <label for="city">Something</label>
+                      <input type="text" class="form-control rounded-0 textbox-border textbox-depth" id="city" placeholder="" ng-model="city" ng-keyup=""/>
                     </div>
                   </div>
 
                   <div class="form-row">
                     <div class="form-group col-md-6">
-                      <label for="input2">Building Name/House Name.</label>
-                      <input type="text" class="form-control rounded-0 is-valid" id="input2" placeholder="Building Name/House Name." ng-model="input2" ng-keyup="getHouse()"/>
+                      <label for="sector">Sector/Area</label>
+                      <input type="text" class="form-control rounded-0 textbox-border" id="sector" placeholder="Sector/Area" ng-model="sector" ng-keyup="getArea()"/>
                     </div>
                     <div class="form-group col-md-6">
-                      <label for="input1">Room No./Flat No.</label>
-                      <input type="text" class="form-control rounded-0 is-valid" id="input1" placeholder="Room No./Flat No." ng-model="input1"/>
+                      <label for="street">Street Name/Street No.</label>
+                      <input type="text" class="form-control rounded-0 textbox-border" id="street" placeholder="Street Name/Street No." ng-model="street" ng-keyup="getStreet()"/>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="bhname">Building Name/House Name.</label>
+                      <input type="text" class="form-control rounded-0 textbox-border" id="bhname" placeholder="Building Name/House Name." ng-model="bhname" ng-keyup="getHouse()"/>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="hfno">Room No./Flat No.</label>
+                      <input type="text" class="form-control rounded-0 textbox-border" id="hfno" placeholder="Room No./Flat No." ng-model="hfno"/>
                     </div>
                   </div>
                   
@@ -118,13 +98,22 @@
             <div class="p-1 mb-2 bg-danger text-white border border-white" ng-show=""><h4><center ng-bind="myWelcome.value1"></center></h4>
             </div>
           </div>
-          
+          <div class="col-sm-6">
+            maps
+          </div>
         </div>
       </div>
     </div>
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+      </div>
+    </footer>
     <script src="js/functionality.js">
     </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>

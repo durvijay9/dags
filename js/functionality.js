@@ -15,6 +15,37 @@ var app = angular.module('indexApp', []);
             });
         };
 
+        $scope.availableTags = [
+                            "ActionScript",
+                            "AppleScript",
+                            "Asp",
+                            "BASIC",
+                            "C",
+                            "C++",
+                            "Clojure",
+                            "COBOL",
+                            "ColdFusion",
+                            "Erlang",
+                            "Fortran",
+                            "Groovy",
+                            "Haskell",
+                            "Java",
+                            "JavaScript",
+                            "Lisp",
+                            "Perl",
+                            "PHP",
+                            "Python",
+                            "Ruby",
+                            "Scala",
+                            "Scheme"
+                        ];
+                        $scope.getPincode = function () {
+                            console.log($scope.availableTags);
+                            $("#pincode").autocomplete({
+                                source: $scope.availableTags
+                            });
+                        };
+
         // $scope.getZipCode = function(zipcode){
         //   $http({
         //     method: 'POST',
@@ -71,7 +102,17 @@ var loginapp = angular.module('loginApp',[]);
             $scope.credentials = null;
             $scope.errorUserid = null;
             $scope.errorpassword = null;
-            $scope.status = response.data.status;
+            if(!response.data.status)
+            {
+              console.log("1");
+              $scope.status = "Invalid Username or password";
+            }
+            else if (response.data.status)
+            {
+              console.log("2");
+              window.location = "index.php";
+            }
+
           }
         },
         function(response){

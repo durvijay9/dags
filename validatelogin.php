@@ -18,8 +18,8 @@ if(!empty($error))
 	$data["error"] = $error;
 else
 {
-	//$conn = $obj->dbconnectDags();
-	$data["status"] = $obj->loginuser($from_data->userid, $from_data->password);
+	$conn = $obj->dbconnectDags();
+	$data["status"] = $obj->loginuser($conn, $from_data->userid, $from_data->password);
 }
 
 echo json_encode($data);

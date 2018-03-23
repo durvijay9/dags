@@ -11,12 +11,43 @@
   </head>
 
   <body ng-app="loginApp" ng-controller="loginControl">
+    <?php 
+      include('navbar.php');
+    ?>
     <div class="fluid-container">
-      <div class="row no-margin">
-        <div class="col-sm-4">
-          
+      <div class="row row-allign"> 
+        <div class="col-sm-1">
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-7">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExmpleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <!-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
+            </ol>
+            <div class="carousel-inner">
+              <!-- <div class="carousel-item active">
+                <img class="d-block w-100" src="images/Digital-post-office.jpg" alt="First slide" height="350px">
+              </div> -->
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="images/FC_image_750.jpg" alt="Second slide" height="350px">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images/india-post-centre.jpg" alt="Third slide" height="350px">
+              </div>
+            </div>
+            <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span> -->
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
           <div class="card-layout">
             <form ng-submit="validatelogin()">
               <div class="form-group">
@@ -39,11 +70,14 @@
             </form>
           </div>
         </div>
-        <div class="col-sm-4">
-          
-        </div>
+        
       </div>
     </div>
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+      </div>
+    </footer>
     <script src="js/functionality.js">
 
     </script>
