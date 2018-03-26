@@ -56,9 +56,15 @@ body {
 {
 	border: solid;
 }
-.row-allign
+.login-allign
 {
   margin-top: 80px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.row-allign
+{
+  /*margin-top: 80px;*/
 	margin-right: 0px;
 	margin-left: 0px;
 }
@@ -94,5 +100,14 @@ li:hover
 {  
     background-color:#f9f9f9;  
 } 
+.center-align
+{
+  align-content: center;
+}
+.map-align
+{
+  padding-top: 20px;
+  height: 500px;
+}
 
 

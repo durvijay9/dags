@@ -282,6 +282,41 @@ class dags
 	        }
 	    }
 
+	    function insertLocation($conn,$houseNo,$houseName,$landmark,$street,$sector,$pincode,$typeOfAdd,$Lat,$Long)
+	    {
+	    	$latitude = $Lat;
+	    	$longitude = $Long;
+	    	$digitalAddress=$this->generateDigitalAddress($latitude,$longitude);
+	    	$stmt = mysqli_stmt_init($conn);
+			$qry = "INSERT INTO `locations`(`digital_address`, `house_no`, `building`, `street`, `area`, `locality`, `pincode`, `latitude`, `longitude`, `type_of_address`,`status_code`,verified) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+			if (mysqli_stmt_prepare($stmt, $qry))
+			{
+           
+				date_default_timezone_set("Asia/kolkata");
+			    $createdat = date("Y-m-d H:i:s");
+				$statusCode=1;
+				$Verified="verified"; //just check this again       
+				mysqli_stmt_bind_param($stmt,"ssssssssssis",$digitalAddress,$houseNo,$houseName,$street,$landmark,$sector,$pincode,$Lat,$Long,$typeOfAdd,$statusCode,$Verified);
+				mysqli_stmt_execute($stmt) or die( mysqli_stmt_error($stmt));
+
+				return $digitalAddress;
+
+			}
+			else
+			{
+			   	// return "Failed to insert the data";
+			   	return false;
+			}
+
+	    }
+
+	    function generateDigitalAddress($Lat,$Long)
+	    {
+	    	$digitaldata = json_decode(file_get_contents('http://159.65.148.25:9999/$Lat,$Long'));
+	    	return $digitaldata->geohash;
+	    }
+
+
 
 
 

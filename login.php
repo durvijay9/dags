@@ -15,7 +15,7 @@
       include('navbar.php');
     ?>
     <div class="fluid-container">
-      <div class="row row-allign"> 
+      <div class="row login-allign"> 
         <div class="col-sm-1">
         </div>
         <div class="col-sm-7">
